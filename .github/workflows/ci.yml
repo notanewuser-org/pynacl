@@ -80,10 +80,6 @@ jobs:
         env:
           TOXENV: ${{ matrix.PYTHON.TOXENV }}
           SODIUM_INSTALL_MINIMAL: ${{ matrix.PYTHON.SODIUM_INSTALL_MINIMAL }}
-      - name: Upload coverage
-        run: |
-          curl -o codecov.sh -f https://codecov.io/bash || curl -o codecov.sh -f https://codecov.io/bash || curl -o codecov.sh -f https://codecov.io/bash || curl -o codecov.sh -f https://codecov.io/bash || curl -o codecov.sh -f https://codecov.io/bash
-          bash codecov.sh -n "Python ${{ matrix.PYTHON.VERSION }}${{ matrix.PYTHON.NOTE }} on macOS"
   windows:
     runs-on: windows-latest
     strategy:
@@ -122,7 +118,4 @@ jobs:
         env:
           TOXENV: ${{ matrix.PYTHON.TOXENV }}
         shell: cmd
-      - name: Upload coverage
-        run: |
-          curl -o codecov.sh -f https://codecov.io/bash || curl -o codecov.sh -f https://codecov.io/bash || curl -o codecov.sh -f https://codecov.io/bash || curl -o codecov.sh -f https://codecov.io/bash || curl -o codecov.sh -f https://codecov.io/bash
-          bash codecov.sh -n "Python ${{ matrix.PYTHON.VERSION }} on Windows ${{ matrix.WINDOWS.ARCH }}"
+
