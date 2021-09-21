@@ -53,10 +53,7 @@ jobs:
           SODIUM_INSTALL_MINIMAL: ${{ matrix.PYTHON.SODIUM_INSTALL_MINIMAL }}
           SODIUM_INSTALL: ${{ matrix.PYTHON.SODIUM_INSTALL }}
       - name: Upload coverage
-        run: |
-          curl -o codecov.sh -f https://codecov.io/bash || curl -o codecov.sh -f https://codecov.io/bash || curl -o codecov.sh -f https://codecov.io/bash || curl -o codecov.sh -f https://codecov.io/bash || curl -o codecov.sh -f https://codecov.io/bash
-          bash codecov.sh -n "Python ${{ matrix.PYTHON.VERSION }}${{ matrix.PYTHON.NOTE }} on macOS"
-        if: matrix.PYTHON.COVERAGE != 'false'
+        run: bash <(curl -s https://codecov.io/bash)
 
   macos:
     runs-on: macos-latest
